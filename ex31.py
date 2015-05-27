@@ -26,6 +26,38 @@ if door == "1":
 	
 	elif bear == "2":
 		print "The bear eats your legs off. Good job!"
+		print "Your arms work though! What do you do?"
+		print "1. Use those hands to flee."
+		print "2. Go for the cheese cake."
+		
+		serious = raw_input("> ")
+		
+		if serious == "1":
+			print "Not quite fast enough. The bear tore your arms clean off."
+		elif serious == "2":
+			print "Really?! Still going after the cake? DEAD!"
+		else:
+			print "Wow okay the bear does speak! You are let go."
+			print "When you leave you see two new doors. Which do you choose? 1 or 2?"
+			
+			n_door = raw_input("> ")
+			
+			if n_door == "1":
+				print "A giant snake with a monocle reading a book about owls. What will you do?"
+				print "1. Ask him about his book."
+				print "2. Steal his book."
+				print "3. Tell the snake you love owls."
+				
+				snake = raw_input("> ")
+				
+				if snake == "1":
+					print "Tough luck. He hates questions and injects you with venom."
+				elif snake == "2":
+					print "Wow okay that was dumb, he just consumed you."
+				elif snake == "3":
+					print "Boy oh boy are you lucky. He related to your story."
+				else:
+					print "Great now you have to listen to all of his books forever."
 	else:
 		print "Well, doing %s is probably better. Bear runs away." % bear
 
