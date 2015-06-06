@@ -12,7 +12,7 @@ def loop(n, oper, m):
 		def loop1():
 			# with range() you don't need the increment that you use in the while-loop above.
 			# if you did use the increment it would take each number in the list range creates and add to it.
-			for h in range(0, n, 2):
+			for h in range(0, n, m):
 				print "At the top h is %d" % h
 				numbers1.append(h)
 				print "Numbers now: ", numbers1
