@@ -1,13 +1,146 @@
 from sys import exit
+from math import sqrt
 
+def gameRoom():
+	print """
+		That was such a bad choice, you have been tricked!
+		"""
+	cthulhuRoom()
+
+def orcRoom():
+	print """
+		They are swinging and mad as you enter their territory!\n
+		There aren't many options just fight or flee.\n
+		Which do you choose?
+		"""
+	orc = raw_input("> ").lower()
+	
+	if orc == "fight":
+		dead("\t\tDid you think you had a chance?")
+	else:
+		dead("\t\tThere is no escape!")
+
+def beeRoom():
+	print """
+		They are buzzing and humming and headed straight for you!\n
+		Do you run away, or scream, or fight?
+		"""
+	bee = raw_input("> ").lower()
+	
+	if bee == "run":
+		print "\t\tYou shouldn't have done that!"
+		print "\t\tConsumed!"
+		exit(0)
+	elif bee == "scream":
+		print "\t\tMerlin appears and saves you."
+		merlin()
+	elif bee == "fight":
+		dead("\t\tThey sting you mercilessly!")
+	else:
+		print "\t\tJason has caught up to you!"
+		dead("\t\tThe bees are the least of your problems!")
+	
+def merlin():
+	answrs = []
+	rspns = []
+	print """
+		He sees you and smiles asking you what you would like from him.\n
+		When you tell him you want to go home he grins.\n
+		"One more test." Merlin tells you.
+		"""
+	print '\t\t"Tell me the square root of 64, 144, 225, and 400, in order."'
+	first = sqrt(64)
+	answrs.append(first)
+	second = sqrt(144)
+	answrs.append(second)
+	third = sqrt(225)
+	answrs.append(third)
+	fourth = sqrt(400)
+	answrs.append(fourth)
+	
+	wizard = True
+	while True:
+		print "First answer?"
+		ans1 = int(raw_input())
+		rspns.append(ans1)
+		print "Second answer?"
+		ans2 = int(raw_input())
+		rspns.append(ans2)
+		print "Third answer?"
+		ans3 = int(raw_input())
+		rspns.append(ans3)
+		print "fourth answer?"
+		ans4 = int(raw_input())
+		rspns.append(ans4)
+	
+	
+		if answrs == rspns:
+			print "\t\tYou're freedom awaits young one."
+			exit(0)
+		elif answrs != rspns and wizard:
+			print "\t\tThat isn't right start over!"
+			wizard = False
+		elif answrs != rspns and not wizard:
+			dead("\t\tYour failure is an embarrassing!")
+	
 def basement():
-	exit(0)
+	print """
+		You have made it into the basement. Good job!\n
+		You're not out yet though!\n
+		Go to the window, or the trap door, or you could try screaming.
+		"""
+	
+	basement = raw_input("> ").lower()
+	
+	if basement == "scream":
+		dead("\t\tThat was bad choice. The police are too late.")
+	elif basement == "trap door":
+		cthulhuRoom()
+	elif basement == "window":
+		gameRoom()
+	
 
 def cthulhuRoom():
-	exit(0)
-
+	print """
+		The lair of the mighty Cthulhu!\n
+		You may regret what you have just done!
+		Especially since you could be here for a long time.
+		"""
+	cthulhu = raw_input("> ").lower()
+		
+	if cthulhu == "lemons":
+		print "\t\tThe citrus burns your eyes as the might roar of laughter thunders!"
+		cthulhuRoom()
+	elif cthulhu == "run":
+		dead("\t\tThe psychosis will consume you!")
+	else:
+		print "\t\tWhat is happening!"
+		freddyRoom()
+	
 def forestRoom():
-	exit(0)
+	print """
+		You have made it to the forest!\n
+		You're not safe yet though!\n
+		You are at a fork of sorts, and you can\n
+		either go straight, left, or right.
+		"""
+		
+	forest = raw_input("> ").lower()
+		
+	if forest == "straight":
+		print """Jason was still chasing after you, but you
+		manage to shimmy up a tree."""
+		print "\t\tMerlin is sitting at the very top."
+		merlin()
+	elif forest == "left":
+		print "\t\tYou encounter a horde of deadly bees!"
+		beeRoom()
+	elif forest == "right":
+		print "\t\tYou have run into the clan of Orcs!"
+		orcRoom()
+	else:
+		print "What? No, the forest consumes your soul!"
+		exit(0)
 
 def michaelMyersRoom():
 	print """
