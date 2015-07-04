@@ -1,4 +1,6 @@
+import unittest
 import hashmap
+
 
 # create a mapping of state to abbreviation
 states = hashmap.new()
@@ -22,16 +24,19 @@ hashmap.set(cities, 'OR', 'Portland')
 # print out some cities
 print '-' * 10
 print "NY State has: %s" % hashmap.get(cities, 'NY')
+
 print "OR State has: %s" % hashmap.get(cities, 'OR')
 
 # print some states
 print '-' * 10
 print "Michigan's abbreviation is: %s" % hashmap.get(states, 'Michigan')
+
 print "Florida's abbreviation is: %s" % hashmap.get(states, 'Florida')
 
 # do it by using the state then cities dict
 print '-' * 10
 print "Michigan has: %s" % hashmap.get(cities, hashmap.get(states, 'Michigan'))
+
 print "Florida has: %s" % hashmap.get(cities, hashmap.get(states, 'Florida'))
 
 # print every state abbreviation
@@ -52,3 +57,13 @@ if not state:
 # can you do this on one line?
 city = hashmap.get(cities, 'TX', 'Does Not Exist')
 print "The city for the state 'TX' is: %s" % city
+
+hashmap.dump(cities)
+print '-' * 10
+#hashmap.dump(states)
+assert(hashmap.get(cities, 'NY') == 'New York')
+assert(hashmap.get(cities, 'OR') == 'Portland')
+assert(hashmap.get(states, 'Michigan') == 'MI')
+assert(hashmap.get(states, 'Florida') == 'FL')
+assert(hashmap.get(cities, hashmap.get(states, 'Michigan'))in 'Detroit')
+assert(hashmap.get(cities, hashmap.get(states, 'Florida')) in 'Jacksonville')
