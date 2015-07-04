@@ -8,13 +8,13 @@ def new(num_buckets=256):
 def hash_key(aMap, key):
     """Given a key this will create a number and then convert
 	it to an index for the aMap's buckets."""
-    print hash(key) % len(aMap)   
+    #print hash(key) % len(aMap)   
     return hash(key) % len(aMap)
 		
 def get_bucket(aMap, key):
     """Given a key, find the bucket where it would go."""
     bucket_id = hash_key(aMap, key)
-    print bucket_id    
+    #print bucket_id    
     return aMap[bucket_id]
 	
 def get_slot(aMap, key, default=None):
@@ -63,3 +63,8 @@ def list(aMap):
         if bucket:
             for k, v in bucket:
                 print k,v 
+				
+def dump(aMap):
+    for item in enumerate(aMap):
+        if item:
+            print item
