@@ -45,6 +45,7 @@ hashmap.list(states)
 
 # print every city in state
 print '-' * 10
+hashmap.delete(cities, 'OR')
 hashmap.list(cities)
 
 print '-' * 10
