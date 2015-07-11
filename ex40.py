@@ -8,7 +8,8 @@ class Song(object):
     def add_me_a_line(self):
         new_lyric = raw_input("What Lyrics shall we add? Type one! ")
         self.lyrics.append(new_lyric)
-        		
+    def last_line(self):
+        print self.lyrics.pop()	
 happy_bday = Song(
         ["Happy birthday to you",
 		 "I don't want to get sued",   
@@ -22,6 +23,7 @@ bulls_on_parade = Song(
 
 happy_bday.sing_me_a_song()
 bulls_on_parade.sing_me_a_song()
+bulls_on_parade.last_line()
 happy_bday.add_me_a_line()
 happy_bday.sing_me_a_song()
 bulls_on_parade.add_me_a_line()
