@@ -21,6 +21,11 @@ bulls_on_parade = Song(
 		 "with pockets full of shells"]
 )
 
+taylor_swift_bad_blood = Song(
+        ["And it's so sad too",
+        "Think about the good times",
+        "You and I."]
+)
 happy_bday.sing_me_a_song()
 bulls_on_parade.sing_me_a_song()
 bulls_on_parade.last_line()
@@ -28,3 +33,5 @@ happy_bday.add_me_a_line()
 happy_bday.sing_me_a_song()
 bulls_on_parade.add_me_a_line()
 bulls_on_parade.sing_me_a_song()
+taylor_swift_bad_blood.add_me_a_line()
+taylor_swift_bad_blood.sing_me_a_song()
