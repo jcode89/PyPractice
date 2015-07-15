@@ -19,3 +19,4 @@ print (len(data))
 for index in range(0, len(data)):
     print ("Title: {title}\n Body: {body}".format(title=data[index]['title'], 
                                                   body=data[index]['body']))
+                                                  
