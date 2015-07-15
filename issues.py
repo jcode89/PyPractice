@@ -18,4 +18,4 @@ print (len(data))
 # so we can call values using the keys.
 for index in range(0, len(data)):
     print ("Title: {title}\n Body: {body}".format(title=data[index]['title'], 
-                                           body=data[index]['body']))
+                                                  body=data[index]['body']))
