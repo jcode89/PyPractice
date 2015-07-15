@@ -17,4 +17,4 @@ print (len(data))
 # it then acts like any normal JSON, which acts like a dict
 # so we can call values using the keys.
 for index in range(0, len(data)):
-    print (data[index]['title'])
+    print ("Title: {title} \n Body: {body}".format(title=data[index]['title'], body=data[index]['body'] ))
