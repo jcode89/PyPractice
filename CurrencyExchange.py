@@ -32,7 +32,7 @@ if results['success']:
         assert (type(results['amount']) == float)
         print("The rate is: %.6s" % results['rate'])
         print("New Amount: ",results['amount'],conv_curr_code)
-    except:
+    except AssertionError:
         # If one of the asserts fails, than this code runs.
         # Sometimes the amount isn't a float.
         print("The rate is: %.6s" % results['rate'])
