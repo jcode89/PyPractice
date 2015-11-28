@@ -40,7 +40,7 @@ def find_factors(some_number ,some_list):
     try:
         for number in some_list:
             if some_number % number == 0:
-                results.append(number)        
+                results.append(number)
         return results, "The largest prime factor is: %d" %  max(results)
     except ValueError:
         return "Woops looks like %d is a prime" % some_number
@@ -58,6 +58,8 @@ if __name__ == '__main__':
         filename = input("Enter name of file > ")
         atkins_to_file(sieve_of_atkins(plimit), filename)
         print("File saved succesfully!")
+        primes = sieve_of_atkins(plimit)
+        print(find_factors(int(limit), primes))
     elif choice.lower() == 'no':
         # A number will never have a prime factor greater than the
         # square root of that number.
